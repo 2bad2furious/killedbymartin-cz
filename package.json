@@ -9,7 +9,7 @@
     "test": "ng test",
     "cname:bckp": "mv docs/CNAME CNAME",
     "cname:restore": "mv CNAME docs/CNAME",
-    "gh": "ng build --configuration production --base-href /killedymartin-cz/ --output-path docs && cp docs/index.html docs/404.html"
+    "gh": "ng build --configuration production --base-href /killedbymartin-cz/ --output-path docs && cp docs/index.html docs/404.html"
   },
   "private": true,
   "dependencies": {
