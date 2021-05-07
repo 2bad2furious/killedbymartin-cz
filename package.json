@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "gh": "mv docs/CNAME CNAME && ng build --configuration production --output-path docs && cp docs/index.html docs/404.html && mv CNAME docs/CNAME"
+    "cname:bckp": "mv docs/CNAME CNAME",
+    "cname:restore": "mv CNAME docs/CNAME",
+    "gh": "ng build --configuration production --base-href /killedymartin-cz/ --output-path docs && cp docs/index.html docs/404.html"
   },
   "private": true,
   "dependencies": {
