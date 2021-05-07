@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "gh": "mv docs/CNAME CNAME && ng build --configuration production --output-path docs && cp docs/index.html docs/404.html && mv CNAME docs/CNAME"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +19,7 @@
     "@angular/platform-browser": "~12.0.0-rc.2",
     "@angular/platform-browser-dynamic": "~12.0.0-rc.2",
     "@angular/router": "~12.0.0-rc.2",
+    "bootstrap": "^5.0.0-beta3",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"

@@ -1,0 +1,13 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/variables';
+
+$theme-colors: (
+  'dark': $dark,
+  'light': $light
+);
+$h1-font-size: 1rem;
+$btn-font-size: 0.75rem;
+$border-width: 2px;
+
+@import '~bootstrap/scss/utilities';
