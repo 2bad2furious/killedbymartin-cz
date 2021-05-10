@@ -1,35 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
-//@import "~animate.css/animate.min.css";
+@use "variables" as v;
+@import "~tailwindcss/dist/tailwind.min.css";
 
-@import "variables";
+$colors: (
+  primary: #{v.$primary},
+  secondary: #{v.$secondary},
+  accent: #{v.$accent}
+);
 
-@import '~bootstrap/scss/_mixins.scss';
-@import '~bootstrap/scss/_root.scss';
-@import '~bootstrap/scss/_reboot.scss';
-@import '~bootstrap/scss/_type.scss';
-// @import '~bootstrap/scss/_alert';
-// @import '~bootstrap/scss/_badge';
-// @import '~bootstrap/scss/_breadcrumb';
-// @import '~bootstrap/scss/_button-group';
-@import '~bootstrap/scss/_buttons';
-// @import '~bootstrap/scss/_card.scss';
-// @import '~bootstrap/scss/_carousel.scss';
-// @import '~bootstrap/scss/_close.scss';
-// @import '~bootstrap/scss/_dropdown.scss';
-// @import '~bootstrap/scss/_forms';
-// @import '~bootstrap/scss/_grid.scss';
-// @import '~bootstrap/scss/_images.scss';
-// @import '~bootstrap/scss/_list-group.scss';
-// @import '~bootstrap/scss/_modal.scss';
-// @import '~bootstrap/scss/_nav';
-// @import '~bootstrap/scss/_navbar.scss';
-// @import '~bootstrap/scss/_pagination.scss';
-// @import '~bootstrap/scss/_popover.scss';
-// @import '~bootstrap/scss/_progress.scss';
-// @import '~bootstrap/scss/_spinners.scss';
-// @import '~bootstrap/scss/_tables';
-// @import '~bootstrap/scss/_toasts.scss';
-// @import '~bootstrap/scss/_tooltip.scss';
-// @import '~bootstrap/scss/_transitions.scss';
+:root {
+  @each $key, $color in $colors {
+    --#{$key}: #{$color};
+  }
+}
 
-@import "~bootstrap/scss/utilities/api";
+@each $key, $color in $colors {
+  .color-#{$key} {
+    color: var(--#{$key});
+  }
+}
+

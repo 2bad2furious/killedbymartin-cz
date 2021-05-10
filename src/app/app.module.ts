@@ -1,22 +1,25 @@
-import {NgModule} from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
-import {DetailComponent} from './detail/detail.component';
+import localeCs from '@angular/common/locales/cs';
+import {registerLocaleData} from "@angular/common";
+
+registerLocaleData(localeCs);
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    DetailComponent
+    HomeComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'cs' }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

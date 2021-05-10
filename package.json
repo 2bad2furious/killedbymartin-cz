@@ -9,7 +9,7 @@
     "test": "ng test",
     "cname:bckp": "mv docs/CNAME CNAME",
     "cname:restore": "mv CNAME docs/CNAME",
-    "gh": "ng build --configuration production --base-href /killedbymartin-cz/ --output-path docs && cp docs/index.html docs/404.html"
+    "gh": "npm run cname:bckp && ng build --configuration production --output-path docs && cp docs/index.html docs/404.html && npm run cname:restore"
   },
   "private": true,
   "dependencies": {
@@ -21,12 +21,13 @@
     "@angular/platform-browser": "~12.0.0-rc.2",
     "@angular/platform-browser-dynamic": "~12.0.0-rc.2",
     "@angular/router": "~12.0.0-rc.2",
-    "bootstrap": "^5.0.0-beta3",
     "rxjs": "~6.6.0",
+    "tailwindcss": "^2.1.2",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^11.1.1",
     "@angular-devkit/build-angular": "~12.0.0-rc.2",
     "@angular/cli": "~12.0.0-rc.2",
     "@angular/compiler-cli": "~12.0.0-rc.2",
@@ -38,6 +39,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "purgecss-webpack-plugin": "^4.0.3",
     "typescript": "~4.2.3"
   }
 }
