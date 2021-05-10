@@ -7,9 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "cname:bckp": "mv docs/CNAME CNAME",
-    "cname:restore": "mv CNAME docs/CNAME",
-    "gh": "npm run cname:bckp && ng build --configuration production --output-path docs && cp docs/index.html docs/404.html && npm run cname:restore"
+    "cname:bckp": "mv docs/CNAME docs/CNAME",
+    "cname:restore": "mv docs/CNAME docs/CNAME",
+    "gh": "cross-env NODE_ENV=production ng build --configuration production --output-path docs && cp docs/index.html docs/404.html"
   },
   "private": true,
   "dependencies": {
@@ -27,19 +27,22 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "^11.1.1",
     "@angular-devkit/build-angular": "~12.0.0-rc.2",
     "@angular/cli": "~12.0.0-rc.2",
     "@angular/compiler-cli": "~12.0.0-rc.2",
+    "@tailwindcss/typography": "latest",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "cross-env": "^7.0.3",
     "jasmine-core": "~3.7.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "ngx-tailwind": "^2.1.0",
     "purgecss-webpack-plugin": "^4.0.3",
+    "tailwindcss": "^2.0.3",
     "typescript": "~4.2.3"
   }
 }
