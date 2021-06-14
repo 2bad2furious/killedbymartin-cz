@@ -6,8 +6,9 @@
   <div *ngFor="let project of (projects | async)"
        class="card-content flex flex-col rounded-md p-1.5 card" style="color: var(--primary)"
        [style.background]="'url(' + project.imgUrl + ')'">
-    <div class="self-stretch">
-      <h2 class="text-xl underline">{{project.title}}</h2>
+    <div class="self-stretch d-flex flex-col">
+      <a href="https://github.com/Chesters-CZ/twitternt" target="_blank"><h2
+        class="text-xl underline">{{project.title}}</h2></a>
       <p class="text-md">{{project.excerpt}}</p>
       <p class="text-sm color-secondary">{{project.date | date:'mediumDate'}}</p>
     </div>
